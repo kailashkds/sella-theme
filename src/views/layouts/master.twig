@@ -114,7 +114,15 @@
     <a href="https://www.enable-javascript.com/" rel="noreferrer"
        target="_blank">To enable JavaScript on webpage</a>.
 </noscript>
-<div class="app-inner flex flex-col min-h-full">
+<div class="ai-preloader active-">
+    <div class="ai-preloader-inner h-100 d-flex align-items-center justify-content-center">
+        <div class="ai-child ai-bounce1"></div>
+        <div class="ai-child ai-bounce2"></div>
+        <div class="ai-child ai-bounce3"></div>
+    </div>
+</div>
+{# <div class="app-inner flex flex-col min-h-full"> #}
+<div class="wrapper">
     {% hook 'body:start' %}
     {% component 'header.header' %}
     {% block content %}{% endblock %}
