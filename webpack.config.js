@@ -11,6 +11,7 @@ module.exports = {
         app     : [asset('styles/app.scss'), asset('js/wishlist.js'), asset('js/app.js'), 
                     asset('js/themeJs/jquery.min.js'), 
                     asset('js/themeJs/bootstrap.bundle.min.js'),
+                    asset('js/themeJs/plugins.js'),
                     asset('js/themeJs/main.js')
                 ],
         home    : asset('js/home.js'),
@@ -64,7 +65,7 @@ module.exports = {
                     loader: 'file-loader',
                     options: {
                       name: '[name].[ext]',
-                      outputPath: '../../fonts/',
+                      outputPath: 'src/assets/fonts/',
                     },
                   },
                 ],
