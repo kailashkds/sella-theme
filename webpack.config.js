@@ -8,7 +8,11 @@ const public = file => path.resolve("public", file || '');
 
 module.exports = {
     entry  : {
-        app     : [asset('styles/app.scss'), asset('js/wishlist.js'), asset('js/app.js')],
+        app     : [asset('styles/app.scss'), asset('js/wishlist.js'), asset('js/app.js'), 
+                    asset('js/themeJs/jquery.min.js'), 
+                    asset('js/themeJs/bootstrap.bundle.min.js'),
+                    asset('js/themeJs/main.js')
+                ],
         home    : asset('js/home.js'),
         landing : asset('js/landing.js'),
         checkout: [asset('js/cart.js'), asset('js/thankyou.js')],
@@ -53,6 +57,18 @@ module.exports = {
                     "sass-loader",
                 ]
             },
+            {
+                test: /\.(woff|woff2|eot|ttf|otf)$/,
+                use: [
+                  {
+                    loader: 'file-loader',
+                    options: {
+                      name: '[name].[ext]',
+                      outputPath: '../../fonts/',
+                    },
+                  },
+                ],
+              },
         ],
     },
     plugins: [
