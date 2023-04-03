@@ -3,6 +3,8 @@ const ThemeWatcher = require('@salla.sa/twilight/watcher.js');
 const CopyPlugin = require('copy-webpack-plugin');
 const path = require('path');
 
+const $ = require('jquery');
+const webpack = require('webpack');
 const asset = file => path.resolve('src/assets', file || '');
 const public = file => path.resolve("public", file || '');
 
@@ -33,7 +35,7 @@ module.exports = {
                 test   : /\.js$/,
                 exclude: [
                     /(node_modules)/,
-                    asset('js/twilight.js')
+                    asset('js/twilight.js'),
                 ],
                 use    : {
                     loader : 'babel-loader',
@@ -76,6 +78,10 @@ module.exports = {
         new ThemeWatcher(),
         new MiniCssExtractPlugin(),
         new CopyPlugin({patterns: [{from: asset('images'), to: public('images')}]}),
+        new webpack.ProvidePlugin({
+            $: 'jquery',
+            jQuery: 'jquery'
+          })
     ],
 }
 ;
