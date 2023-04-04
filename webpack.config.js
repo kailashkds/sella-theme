@@ -86,6 +86,7 @@ module.exports = {
         new MiniCssExtractPlugin(),
         new CopyPlugin({patterns: [{from: asset('images'), to: public('images')}]}),
         new CopyPlugin({patterns: [{from: 'node_modules/font-awesome/fonts', to: public('fonts')}]}),
+     
     ],
 }
 ;
