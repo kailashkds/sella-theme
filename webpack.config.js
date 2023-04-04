@@ -9,16 +9,7 @@ const public = file => path.resolve("public", file || '');
 
 module.exports = {
     entry  : {
-        app     : [asset('styles/app.scss'), asset('js/wishlist.js'), asset('js/app.js'), 
-                    asset('js/themeJs/jquery.min.js'), 
-                    asset('js/themeJs/bootstrap.bundle.min.js'),
-                    asset('js/themeJs/plugins.js'),
-                    asset('js/themeJs/magnific-popup.js'),
-                    asset('js/themeJs/slick.js'),
-                    asset('js/themeJs/jquery-ui.js'),
-                    asset('js/themeJs/masonary.js'),
-                    asset('js/themeJs/main.js'),
-                ],
+        app     : [asset('styles/app.scss'), asset('js/wishlist.js'), asset('js/app.js')],
         home    : asset('js/home.js'),
         landing : asset('js/landing.js'),
         checkout: [asset('js/cart.js'), asset('js/thankyou.js')],
@@ -49,9 +40,6 @@ module.exports = {
                 exclude: [
                     /(node_modules)/,
                     asset('js/twilight.js'),
-                    asset('js/themeJs/plugins.js'),
-                    asset('js/themeJs/main.js'),
-
                 ],
                 use    : {
                     loader : 'babel-loader',
