@@ -87,6 +87,19 @@
     </div>
 </header>
 
+<div class="searchform__popup" id="searchForm">
+    <a href="#" class="btn-close"><i class="fa fa-times"></i></a>
+    <div class="searchform__body">
+        <p>Start typing and press Enter to search</p>
+        <form class="searchform">
+            <input type="text" name="search" id="search" class="searchform__input"
+                placeholder="Search Entire Store...">
+                <span class="sm:hidden px-2 opacity-50">{{ trans('blocks.header.searchProducts') }}</span>
+            <button onclick="salla.event.dispatch('search::open')" class="searchform__submit"><i class="fa fa-search"></i></button>
+        </form>
+    </div>
+</div>
+
 <!--
 <header class="store-header d-none">
     {# Top Nav #}
