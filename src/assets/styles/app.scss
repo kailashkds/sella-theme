@@ -94,11 +94,9 @@
 @import 'mmenu-light/dist/mmenu-light.css';
 
 /* New Theme Styles: */
-@import './themes/main.scss';
-@import './themes/dl-icon.scss';
 @import './themes/bootstrap.scss';
 @import './themes/plugins.scss';
+@import './themes/main.scss';
 
 // Import Font Awesome
 @import "font-awesome";
-@import 'font-awesome/scss/variables';

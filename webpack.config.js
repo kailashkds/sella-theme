@@ -11,6 +11,7 @@ module.exports = {
     entry  : {
         app     : [asset('styles/app.scss'), asset('js/wishlist.js'), asset('js/app.js'), 
                     asset('js/themeJs/jquery.min.js'), 
+                    asset('js/themeJs/bootstrap.bundle.min.js'),
                     asset('js/themeJs/plugins.js'),
                     asset('js/themeJs/main.js'),
                 ],
@@ -84,8 +85,7 @@ module.exports = {
         new ThemeWatcher(),
         new MiniCssExtractPlugin(),
         new CopyPlugin({patterns: [{from: asset('images'), to: public('images')}]}),
-        new CopyPlugin({patterns: [{from: 'nodel_modules/font-awesome/fonts', to: public('fonts')}]}),
-      
+        new CopyPlugin({patterns: [{from: 'node_modules/font-awesome/fonts', to: public('fonts')}]}),
     ],
 }
 ;
