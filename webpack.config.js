@@ -2,9 +2,8 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const ThemeWatcher = require('@salla.sa/twilight/watcher.js');
 const CopyPlugin = require('copy-webpack-plugin');
 const path = require('path');
-
 const $ = require('jquery');
-const webpack = require('webpack');
+
 const asset = file => path.resolve('src/assets', file || '');
 const public = file => path.resolve("public", file || '');
 
@@ -12,9 +11,8 @@ module.exports = {
     entry  : {
         app     : [asset('styles/app.scss'), asset('js/wishlist.js'), asset('js/app.js'), 
                     asset('js/themeJs/jquery.min.js'), 
-                    asset('js/themeJs/bootstrap.bundle.min.js'),
                     asset('js/themeJs/plugins.js'),
-                    asset('js/themeJs/main.js')
+                    asset('js/themeJs/main.js'),
                 ],
         home    : asset('js/home.js'),
         landing : asset('js/landing.js'),
@@ -36,6 +34,9 @@ module.exports = {
                 exclude: [
                     /(node_modules)/,
                     asset('js/twilight.js'),
+                    asset('js/themeJs/plugins.js'),
+                    asset('js/themeJs/main.js'),
+
                 ],
                 use    : {
                     loader : 'babel-loader',
@@ -83,10 +84,7 @@ module.exports = {
         new ThemeWatcher(),
         new MiniCssExtractPlugin(),
         new CopyPlugin({patterns: [{from: asset('images'), to: public('images')}]}),
-        new webpack.ProvidePlugin({
-            $: 'jquery',
-            jQuery: 'jquery'
-          })
+      
     ],
 }
 ;
