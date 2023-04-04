@@ -17,6 +17,7 @@
   "author": "Salla",
   "dependencies": {
     "animejs": "^3.2.1",
+    "bootstrap": "^5.2.3",
     "font-awesome": "^4.7.0",
     "fontawesome-4.7": "^4.7.0",
     "fslightbox": "^3.3.0-2",
