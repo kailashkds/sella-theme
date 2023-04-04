@@ -96,9 +96,9 @@
 /* New Theme Styles: */
 @import './themes/main.scss';
 @import './themes/dl-icon.scss';
-@import './themes/font-awesome.min.scss';
+// @import './themes/font-awesome.min.scss';
 @import './themes/bootstrap.scss';
 @import './themes/plugins.scss';
 
 // Import Font Awesome
-@import '~font-awesome/css/font-awesome.min.css';
+@import "~font-awesome";
