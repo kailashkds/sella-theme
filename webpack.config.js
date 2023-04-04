@@ -61,24 +61,23 @@ module.exports = {
                     "sass-loader",
                 ]
             },
-            { test: /\.(png|woff|woff2|eot|ttf|svg)$/, use: ['url-loader?limit=100000'] }
-            // {
-            //     test: /\.(woff|woff2|eot|ttf|otf)$/,
-            //     exclude: [
-            //         /(node_modules)/,
-            //     ],
-            //     use: [
-            //       {
-            //         loader: 'file-loader',
-            //         options: {
-            //           outputPath: './fonts/',
-            //           name: './fonts/[name].[ext]',
-            //           limit: 1000,
+            {
+                test: /\.(woff|woff2|eot|ttf|otf)$/,
+                exclude: [
+                    /(node_modules)/,
+                ],
+                use: [
+                  {
+                    loader: 'file-loader',
+                    options: {
+                      outputPath: './fonts/',
+                      name: './fonts/[name].[ext]',
+                      limit: 1000,
 
-            //         },
-            //       },
-            //     ],
-            //   },
+                    },
+                  },
+                ],
+              },
         ],
     },
     plugins: [
