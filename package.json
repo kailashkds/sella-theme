@@ -16,6 +16,7 @@
   },
   "author": "Salla",
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.4.0",
     "animejs": "^3.2.1",
     "fslightbox": "^3.3.0-2",
     "jquery": "^3.6.4",

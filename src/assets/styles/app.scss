@@ -94,8 +94,14 @@
 @import 'mmenu-light/dist/mmenu-light.css';
 
 /* New Theme Styles: */
-@import './themes/main.css';
-@import './themes/dl-icon.css';
-@import './themes/font-awesome.min.css';
-@import './themes/bootstrap.css';
-@import './themes/plugins.css';
+@import './themes/main.scss';
+@import './themes/dl-icon.scss';
+@import './themes/font-awesome.min.scss';
+@import './themes/bootstrap.scss';
+@import './themes/plugins.scss';
+
+// Import Font Awesome
+@import "~@fortawesome/fontawesome-free/scss/fontawesome";
+@import "~@fortawesome/fontawesome-free/scss/solid";
+@import "~@fortawesome/fontawesome-free/scss/regular";
+@import "~@fortawesome/fontawesome-free/scss/brands";
