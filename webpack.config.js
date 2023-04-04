@@ -25,6 +25,16 @@ module.exports = {
         pages   : [asset('js/loyalty.js'), asset('js/brands.js'),],
         product : [asset('js/product.js'), asset('js/products.js')],
         order   : asset('js/order.js'),
+        theme   : [   
+                    asset('js/themeJs/jquery.min.js'), 
+                    asset('js/themeJs/bootstrap.bundle.min.js'),
+                    asset('js/themeJs/plugins.js'),
+                    asset('js/themeJs/magnific-popup.js'),
+                    asset('js/themeJs/slick.js'),
+                    asset('js/themeJs/jquery-ui.js'),
+                    asset('js/themeJs/masonary.js'),
+                    asset('js/themeJs/main.js')
+                ],
     },
     output : {
         path: public(),
