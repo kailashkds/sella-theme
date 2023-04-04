@@ -84,6 +84,7 @@ module.exports = {
         new ThemeWatcher(),
         new MiniCssExtractPlugin(),
         new CopyPlugin({patterns: [{from: asset('images'), to: public('images')}]}),
+        new CopyPlugin({patterns: [{from: 'nodel_modules/font-awesome/fonts', to: public('fonts')}]}),
       
     ],
 }
