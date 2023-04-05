@@ -20,6 +20,7 @@ module.exports = {
                     asset('js/themeJs/jquery.min.js'), 
                     asset('js/themeJs/bootstrap.bundle.min.js'),
                     asset('js/themeJs/plugins.js'),
+                    asset('js/themeJs/light-gallery.js'),
                     asset('js/themeJs/magnific-popup.js'),
                     asset('js/themeJs/slick.js'),
                     asset('js/themeJs/jquery-ui.js'),
@@ -27,7 +28,6 @@ module.exports = {
                     asset('js/themeJs/zoom.js'),
                     asset('js/themeJs/main.js')
                 ],
-        lightgallery: [ asset('js/themeJs/light-gallery.js') ]
     },
     output : {
         path: public(),
