@@ -17,10 +17,10 @@ module.exports = {
         product : [asset('js/product.js'), asset('js/products.js')],
         order   : asset('js/order.js'),
         theme   : [   
-                    // asset('js/themeJs/jquery.min.js'), 
+                    asset('js/themeJs/jquery.min.js'), 
                     asset('js/themeJs/bootstrap.bundle.min.js'),
                     asset('js/themeJs/plugins.js'),
-                    asset('js/themeJs/light-gallery.js'),
+                    // asset('js/themeJs/light-gallery.js'),
                     asset('js/themeJs/magnific-popup.js'),
                     asset('js/themeJs/slick.js'),
                     asset('js/themeJs/jquery-ui.js'),

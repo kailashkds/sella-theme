@@ -4,6 +4,11 @@ import Anime from './partials/anime';
 import initTootTip from './partials/tooltip';
 import AppHelpers from "./app-helpers";
 import $ from "jquery";
+import lightGallery from 'lightgallery';
+
+// Plugins
+import lgThumbnail from 'lightgallery/plugins/thumbnail'
+import lgZoom from 'lightgallery/plugins/zoom'
 
 class App extends AppHelpers {
   constructor() {

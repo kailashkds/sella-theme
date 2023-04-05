@@ -2522,6 +2522,11 @@ lang.js@^1.1.14:
   resolved "https://registry.npmjs.org/lang.js/-/lang.js-1.1.14.tgz"
   integrity sha512-HsNKw3b7tYHwDQux3lQtbLGAntwJ5fl8Pl1BPXTKu+gdpaZsK9d787yFmLi6/LSXeNSgPO1CjZDKkrrPsERbSw==
 
+lightgallery@^2.7.1:
+  version "2.7.1"
+  resolved "https://registry.npmjs.org/lightgallery/-/lightgallery-2.7.1.tgz"
+  integrity sha512-NbXOzD2APY1OhOOn464jDsBZBaCRahUoLvBxhDFxvwJeC8hCkCIPYSjGgGTYINxVK09DKMsNDJzRr1ngH5nDdg==
+
 lilconfig@^2.0.5, lilconfig@^2.0.6:
   version "2.1.0"
   resolved "https://registry.npmjs.org/lilconfig/-/lilconfig-2.1.0.tgz"
