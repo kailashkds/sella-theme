@@ -324,9 +324,13 @@
 	        var $button = $(this);
 			var oldValue = $button.parent().find("input").val();
 			var newVal;
+			var maxx = $button.parent().find("input").attr('max');
+
 	        if ($button.hasClass("inc")) {
-				if(newVal < oldValue) {
-	            	newVal = parseFloat(oldValue) + 1;
+				if(oldValue <= maxx) {
+					newVal = parseFloat(oldValue) + 1;
+				}else {
+					newVal = parseFloat(oldValue);
 				}
 	        } else {
 	            // Don't allow decrementing below zero

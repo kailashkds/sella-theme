@@ -182,10 +182,10 @@
                                                 </div>
                                                 <div class="product-gallery__actions">
                                                     <button class="action-btn btn-zoom-popup"><i
-                                                            class="dl-icon-zoom-in"></i></button>
+                                                            class="fa fa-search-plus"></i></button>
                                                     <a href="https://www.youtube.com/watch?v=Rp19QD2XIGM"
                                                         class="action-btn video-popup"><i
-                                                            class="dl-icon-format-video"></i></a>
+                                                            class="fa fa-play-circle-o"></i></a>
                                                 </div>
                                             </div>
                                         </div>
@@ -232,6 +232,21 @@
                                     in stock
                                 </span> #}
 
+                                {% if product.sold_quantity or product.can_show_remained_quantity %}
+                                    {% if product.sold_quantity %}
+                                    <span class="product-stock out-stock">
+                                         {{ trans('pages.products.sold') }}
+                                            <span>{{ pluralize('pages.products.sold_times', product.sold_quantity)|raw }}</span>
+                                    </span>
+                                    {% endif %}
+                                    {% if product.can_show_remained_quantity %}
+                                    <span class="product-stock in-stock">
+                                        {{ trans('pages.products.remained') }}
+                                        <span>{{ product.quantity }}</span>
+                                    </span>
+                                    {% endif %}
+                            {% endif %}
+
                                 <div class="product-price-wrapper mb--40 mb-md--10">
                                     <span class="money">{{ product.price|money }}</span>
                                     {% if product.is_on_sale %}
@@ -250,7 +265,7 @@
                                 onsubmit="return salla.form.onSubmit('cart.addItem', event)" >
                                 
                                 <input type="hidden" name="id" value="{{ product.id }}">
-                                
+
                                 {% hook 'product:single.form.start' %}
                                 {% include 'pages.partials.product.options' %}
                                 {% hook 'product:single.form.end' %}
@@ -280,16 +295,16 @@
                                         {% endif %}
                                         >Add to cart</button>
 
-                                        <a href="wishlist.html"><i class="dl-icon-heart2"></i></a>
-                                        <a href="compare.html"><i class="dl-icon-compare2"></i></a>
+                                        <a data-id="{{ product.id }}" onclick="salla.wishlist.toggle({{ product.id }})"><i class="fa fa-heart-o"></i></a>
+                                       
                                     </div>  
                                 
                                 </form>
 
-                                <div class="product-extra mb--40 mb-sm--20">
+                                {# <div class="product-extra mb--40 mb-sm--20">
                                     <a href="#" class="font-size-12"><i class="fa fa-map-marker"></i>Find store near you</a>
                                     <a href="#" class="font-size-12"><i class="fa fa-exchange"></i>Delivery and return</a>
-                                </div>
+                                </div> #}
                                 <div class="product-summary-footer d-flex justify-content-between flex-sm-row flex-column">
                                     <div class="product-meta">
                                         {% if product.sku %}
@@ -298,11 +313,18 @@
                                         <span class="posted_in font-size-12">Categories: 
                                             <a href="shop-sidebar.html">Fashions</a>
                                         </span>
-                                        <span class="posted_in font-size-12">Tags: 
-                                            <a href="shop-sidebar.html">dress,</a>
-                                            <a href="shop-sidebar.html">fashions,</a>
-                                            <a href="shop-sidebar.html">women</a>
-                                        </span>
+
+
+                                        {% if product.tags|length and theme.settings.get('show_tags') %}
+                                            <span class="posted_in font-size-12">Tags:
+                                                {% for tag in product.tags %}
+                                                    <a href="{{ tag.url }}"
+                                                    class="rtl:ml-2 ltr:mr-2 inline-flex  text-gray-500 hover:text-primary underline text-sm mb-1">{{ tag.name }}
+                                                        ,</a>
+                                                {% endfor %}
+                                            </span>
+                                        {% endif %}
+
                                     </div>
                                     <div class="product-share-box">
                                         <span class="font-size-12">Share With</span>
@@ -790,7 +812,7 @@
                     {% endif %}
                 </div>
 
-                {% if product.tags|length and theme.settings.get('show_tags') %}
+                {# {% if product.tags|length and theme.settings.get('show_tags') %}
                     <div class="mb-3">
                         {% for tag in product.tags %}
                             <a href="{{ tag.url }}"
@@ -798,12 +820,12 @@
                                 ,</a>
                         {% endfor %}
                     </div>
-                {% endif %}
+                {% endif %} #}
 
                 <div class="flex rtl:space-x-reverse space-x-3">
                     <salla-social-share class="hidden sm:inline-flex mb-5"></salla-social-share>
 
-                    <salla-button
+                    {# <salla-button
                             class="btn--wishlist animated hidden sm:inline-flex"
                             data-id="{{ product.id }}"
                             onclick="salla.wishlist.toggle({{ product.id }})"
@@ -811,10 +833,10 @@
                             fill="outline"
                             color="light">
                         <i class="sicon-heart"></i>
-                    </salla-button>
+                    </salla-button> #}
                 </div>
 
-                {% if product.sold_quantity or product.can_show_remained_quantity %}
+                {# {% if product.sold_quantity or product.can_show_remained_quantity %}
                     <div class="bg-white py-2.5 mb-5 rounded-md inline-flex text-sm">
                         {% if product.sold_quantity %}
                             <div class="px-4 text-red-400">
@@ -830,8 +852,8 @@
                             </div>
                         {% endif %}
                     </div>
-                {% endif %}
-                {% if product.sku %}
+                {% endif %} #}
+                {# {% if product.sku %}
                     <div class="mb-4 flex justify-between sm:grid sm:grid-cols-3 bg-white rounded-md px-4 py-2">
                         <div class="flex items-center">
                             <i class="sicon-barcode mx-1"></i>
@@ -839,7 +861,7 @@
                         </div>
                         <div class="text-unicode">{{ product.sku }}</div>
                     </div>
-                {% endif %}
+                {% endif %} #}
                 {% hook 'product:single.description' %}
 
                 {# Installment Methods #}

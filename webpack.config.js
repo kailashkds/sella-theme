@@ -25,6 +25,7 @@ module.exports = {
                     asset('js/themeJs/jquery-ui.js'),
                     // asset('js/themeJs/light-gallery.js'),
                     asset('js/themeJs/masonary.js'),
+                    asset('js/themeJs/zoom.js'),
                     asset('js/themeJs/main.js')
                 ],
     },
