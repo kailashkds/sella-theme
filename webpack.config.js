@@ -2,7 +2,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const ThemeWatcher = require('@salla.sa/twilight/watcher.js');
 const CopyPlugin = require('copy-webpack-plugin');
 const path = require('path');
-const jquery = require('jquery');
+const $ = require( "jquery" );
 
 const asset = file => path.resolve('src/assets', file || '');
 const public = file => path.resolve("public", file || '');
@@ -17,7 +17,7 @@ module.exports = {
         product : [asset('js/product.js'), asset('js/products.js')],
         order   : asset('js/order.js'),
         theme   : [   
-                    asset('js/themeJs/jquery.min.js'), 
+                    // asset('js/themeJs/jquery.min.js'), 
                     asset('js/themeJs/bootstrap.bundle.min.js'),
                     asset('js/themeJs/plugins.js'),
                     asset('js/themeJs/light-gallery.js'),
