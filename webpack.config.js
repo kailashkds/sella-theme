@@ -64,8 +64,7 @@ module.exports = {
                     {loader: "css-loader", options: {url: false}},
                     "postcss-loader",
                     "sass-loader",
-                ],
-                include: [/lightgallery/],
+                ]
             },
             {
                 test: /\.(woff|woff2|eot|ttf|otf)$/,
