@@ -4,6 +4,14 @@ import Anime from './partials/anime';
 import initTootTip from './partials/tooltip';
 import AppHelpers from "./app-helpers";
 import jquery from "jquery";
+import 'lightgallery';
+import 'lg-autoplay';
+import 'lg-fullscreen';
+import 'lg-pager';
+import 'lg-share';
+import 'lg-thumbnail';
+import 'lg-video';
+import 'lg-zoom';
 
 
 class App extends AppHelpers {

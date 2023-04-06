@@ -20,7 +20,7 @@ module.exports = {
                     asset('js/themeJs/jquery.min.js'), 
                     asset('js/themeJs/bootstrap.bundle.min.js'),
                     asset('js/themeJs/plugins.js'),
-                    asset('js/themeJs/light-gallery.js'),
+                    // asset('js/themeJs/light-gallery.js'),
                     asset('js/themeJs/magnific-popup.js'),
                     asset('js/themeJs/slick.js'),
                     asset('js/themeJs/jquery-ui.js'),
@@ -64,7 +64,8 @@ module.exports = {
                     {loader: "css-loader", options: {url: false}},
                     "postcss-loader",
                     "sass-loader",
-                ]
+                ],
+                include: [/lightgallery/],
             },
             {
                 test: /\.(woff|woff2|eot|ttf|otf)$/,
