@@ -2,7 +2,6 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const ThemeWatcher = require('@salla.sa/twilight/watcher.js');
 const CopyPlugin = require('copy-webpack-plugin');
 const path = require('path');
-const $ = require( "jquery" );
 
 const asset = file => path.resolve('src/assets', file || '');
 const public = file => path.resolve("public", file || '');
